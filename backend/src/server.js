@@ -20,9 +20,13 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: ['https://food-mine-nj4n.vercel.app/'],
+    origin: [
+      'https://food-mine-nj4n.vercel.app', // Production URL
+      'https://food-mine-nj4n-git-main-jeels-projects-3c3e3fa3.vercel.app', // Staging URL
+    ],
   })
 );
+
 
 app.use('/api/foods', foodRouter);
 app.use('/api/users', userRouter);
